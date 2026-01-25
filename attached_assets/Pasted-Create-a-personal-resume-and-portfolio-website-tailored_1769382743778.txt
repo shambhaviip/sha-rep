@@ -1,0 +1,56 @@
+Create a personal resume and portfolio website tailored for roles in product management, strategy/consulting, and UX design. The site should look clean, modern, and professional, and be fully responsive.
+Include clear navigation with these sections:
+1. Home / About Me
+    * Short, punchy headline that summarizes me (e.g., “Product Manager & UX Designer focused on data-informed, user-centric products”).
+    * Brief bio describing my background across product, strategy, consulting, and UX.
+    * Professional photo and links to LinkedIn, GitHub/Dribbble/Behance (as placeholders). 
+2. Experience
+    * Timeline of roles (company, title, dates, location).
+    * 3–5 bullet points per role emphasizing impact, metrics, and cross-functional work.
+    * Tag each role as “Product”, “Strategy/Consulting”, or “UX” so recruiters can filter or visually scan. 
+3. Leadership & Achievements
+    * Section for leadership roles (team lead, project lead, clubs, volunteer leadership).
+    * Key achievements such as awards, recognitions, major product launches, revenue or UX impact, etc. 
+4. Case Studies / Projects
+    * Grid or card layout showcasing 3–6 in-depth case studies.
+    * Each case study page should include:
+        * Problem statement and context.
+        * My role (PM, strategist/consultant, UX, or hybrid).
+        * Process and strategy (research, frameworks, roadmap, design process, experiments).
+        * Artifacts (personas, journey maps, wireframes, PRDs, roadmaps, decks – use placeholders).
+        * Outcomes and metrics (e.g., conversion change, revenue impact, NPS, efficiency).
+        * Reflection/what I’d improve next time. 
+5. Strategy & Consulting Work
+    * Space for market analyses, business cases, or consulting-style projects.
+    * Include short case blurbs with: challenge, analysis approach, recommendation, and result.
+6. Publications & Writing
+    * List of articles, blog posts, talks, or newsletters about product, UX, or strategy with titles, dates, and links (placeholders).
+    * Emphasize this as thought leadership.
+7. Education
+    * Degrees, institutions, locations, and graduation dates.
+    * Relevant coursework, certifications (e.g., product, UX, analytics), or bootcamps. 
+8. Skills
+    * Split into categories:
+        * Product: roadmapping, prioritization, A/B testing, stakeholder management, experimentation.
+        * Strategy/Consulting: market analysis, financial modeling (placeholder), storytelling, slide design.
+        * UX: user research, wireframing, prototyping, usability testing, information architecture.
+        * Tools: Figma, Miro, Jira, analytics tools (placeholders). 
+    * Use a simple visual style (tags, grouped lists, or subtle bars), not cheesy progress percentages. 
+9. Contact / Work With Me
+    * Contact form (name, email, message) plus social links.
+    * Short value proposition describing who I help and how (e.g., product teams, early-stage startups, or clients). 
+10. Resume Download Button
+* Prominent button in the navigation and on the homepage to download my resume as a PDF (use a placeholder resume file path).
+* Make it visually distinct and clearly labeled.
+1. Optional Blog / Insights (if simple)
+* Simple blog or “Insights” section to post short articles on product, UX, and strategy.
+Design & implementation details:
+* Use a clean, modern layout with strong hierarchy and whitespace.
+* Typography similar to Inter, Roboto, or Lato, with consistent sizing and weights. 
+* Color palette should feel confident and professional (e.g., one primary accent color, neutral background).
+* Smooth scrolling between sections and subtle hover/scroll animations.
+* Light/dark mode toggle.
+* Basic SEO setup: page title, meta description, social preview, and alt text for images.
+* Generate placeholder text and images that I can easily replace later.
+* Use HTML, CSS, and JavaScript (React or Next.js is preferred, but plain JS is fine if simpler).
+Overall, make the site tell a cohesive story that I am a hybrid product manager, strategist/consultant, and UX designer who can understand users, make smart business decisions, and ship impactful products
