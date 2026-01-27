@@ -48,12 +48,12 @@ export function Navbar() {
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <a href="#" className="font-heading font-bold text-xl md:text-2xl tracking-tight">
+        <a href="#" className="font-heading font-bold text-lg tracking-tight shrink-0">
           Shambhavi<span className="text-accent">.</span>Patil
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+        <nav className="hidden md:flex items-center gap-4 lg:gap-6">
           {navItems.map((item) => (
             <a
               key={item.name}
