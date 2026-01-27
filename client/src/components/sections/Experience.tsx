@@ -8,15 +8,8 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export function Experience() {
   const { data: experiences, isLoading } = useExperiences();
-  const [filter, setFilter] = useState<string>("All");
 
-  const categories = ["All", "Product", "Strategy", "UX"];
-
-  const filteredExperiences = filter === "All" 
-    ? experiences 
-    : experiences?.filter(exp => exp.category === filter);
-
-  const sortedExperiences = filteredExperiences?.sort((a, b) => a.order - b.order) || [];
+  const sortedExperiences = experiences?.sort((a, b) => a.order - b.order) || [];
 
   return (
     <section id="experience" className="py-24 bg-secondary/30">
@@ -28,21 +21,6 @@ export function Experience() {
           className="mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience</h2>
-          <div className="flex flex-wrap gap-2">
-            {categories.map(cat => (
-              <button
-                key={cat}
-                onClick={() => setFilter(cat)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                  filter === cat 
-                    ? "bg-primary text-primary-foreground shadow-lg" 
-                    : "bg-background hover:bg-muted text-muted-foreground border border-border"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
         </motion.div>
 
         <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent">
