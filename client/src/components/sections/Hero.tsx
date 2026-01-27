@@ -16,21 +16,21 @@ export function Hero() {
           transition={{ duration: 0.5 }}
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-            Designing <br />
+            Shambhavi <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/60">
-              Digital Futures
+              Patil
             </span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
-            I'm Alex, a Product Manager & UX Designer bridging the gap between user needs and business strategy. Currently building at TechCorp.
+            I am a UX Strategist and Product Designer who believes in data-informed, user-centric design that balances business goals with human needs.
           </p>
           
           <div className="flex flex-wrap gap-4 mb-12">
             <Button size="lg" className="rounded-full px-8" asChild>
-              <a href="#projects">View Work</a>
+              <a href="#projects">Portfolio</a>
             </Button>
             <Button size="lg" variant="outline" className="rounded-full px-8" asChild>
-              <a href="#contact">Contact Me</a>
+              <a href="/resume.pdf" download>Download Resume</a>
             </Button>
           </div>
 
@@ -50,8 +50,8 @@ export function Hero() {
           <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative z-10">
             {/* Unsplash: Professional portrait in modern office setting */}
             <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop" 
-              alt="Alex Portrait" 
+              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=1000&fit=crop" 
+              alt="Shambhavi Patil Portrait" 
               className="w-full h-full object-cover"
             />
           </div>

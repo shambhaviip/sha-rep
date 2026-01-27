@@ -59,14 +59,25 @@ export function Skills() {
                   <h3 className="text-xl font-bold mb-4 text-accent border-b border-white/10 pb-2 inline-block">
                     {category}
                   </h3>
-                  <ul className="space-y-3">
+                  <div className="space-y-4">
                     {skillsByCategory[category]?.map((skill) => (
-                      <li key={skill.id} className="flex items-center gap-2 text-primary-foreground/90">
-                        <CheckCircle2 className="w-4 h-4 text-accent/80 shrink-0" />
-                        <span className="text-sm font-medium">{skill.name}</span>
-                      </li>
+                      <div key={skill.id} className="space-y-1.5">
+                        <div className="flex justify-between text-sm">
+                          <span className="font-medium">{skill.name}</span>
+                          <span className="text-primary-foreground/60">85%</span>
+                        </div>
+                        <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
+                          <motion.div 
+                            className="h-full bg-accent"
+                            initial={{ width: 0 }}
+                            whileInView={{ width: "85%" }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1, delay: 0.5 }}
+                          />
+                        </div>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </motion.div>
               ))
             )}
