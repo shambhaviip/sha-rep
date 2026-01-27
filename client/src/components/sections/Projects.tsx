@@ -20,7 +20,7 @@ export function Projects() {
           className="mb-12 flex flex-col md:flex-row justify-between items-end gap-4"
         >
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Selected Work</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Projects</h2>
             <p className="text-muted-foreground max-w-xl">
               A collection of case studies and strategic initiatives that drove measurable impact.
             </p>

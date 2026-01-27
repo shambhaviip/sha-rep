@@ -21,6 +21,9 @@ export function Experience() {
           className="mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience</h2>
+          <p className="text-muted-foreground text-lg max-w-2xl">
+            A diverse background spanning Product Management, Project Delivery, and UX Strategy, focused on building impactful digital solutions.
+          </p>
         </motion.div>
 
         <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent">
