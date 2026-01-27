@@ -22,7 +22,7 @@ export function Hero() {
             </span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
-            Entry-level product manager with proven strengths in market and competitive analysis, user research, and UX enhancement. Led analysis across 20+ dealer platforms at Pixo Tech, identifying critical feature gaps and designing AI-driven concepts projected to boost upsell revenue by 20%. Skilled in developing strategic roadmaps and collaborating with engineering teams in Agile environments.
+            I am a UX Strategist and Product Designer who believes in data-informed, user-centric design that balances business goals with human needs.
           </p>
           
           <div className="flex flex-wrap gap-4 mb-12">
