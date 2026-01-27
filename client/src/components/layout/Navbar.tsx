@@ -7,9 +7,11 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { name: "Experience", href: "#experience" },
-  { name: "Work", href: "#projects" },
+  { name: "Achievements", href: "#achievements" },
+  { name: "Portfolio", href: "#projects" },
+  { name: "Publications", href: "#writing" },
+  { name: "Education", href: "#education" },
   { name: "Skills", href: "#skills" },
-  { name: "Writing", href: "#writing" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -21,7 +23,6 @@ export function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
       
-      // Update active section based on scroll position
       const sections = navItems.map(item => item.href.substring(1));
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -48,7 +49,7 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <a href="#" className="font-heading font-bold text-xl md:text-2xl tracking-tight">
-          Alex<span className="text-accent">.</span>Design
+          Shambhavi<span className="text-accent">.</span>Patil
         </a>
 
         {/* Desktop Nav */}

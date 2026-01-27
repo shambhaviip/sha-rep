@@ -5,7 +5,8 @@ import {
   projects, 
   skills, 
   education, 
-  articles 
+  articles,
+  achievements
 } from './schema';
 
 // ============================================

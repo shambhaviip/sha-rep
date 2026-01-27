@@ -73,7 +73,7 @@ export function Projects() {
 
                   <CardContent className="flex-1">
                     <p className="text-muted-foreground text-sm line-clamp-3 mb-4">
-                      {project.problem || project.description}
+                      {project.problem}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {project.tags?.slice(0, 3).map((tag, i) => (
