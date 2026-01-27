@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import portraitImg from "@assets/Formal_Picture_1769532406864.jpg";
 
 export function Hero() {
   return (
@@ -48,9 +49,8 @@ export function Hero() {
           className="relative hidden md:block"
         >
           <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative z-10">
-            {/* Unsplash: Professional portrait in modern office setting */}
             <img 
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=1000&fit=crop" 
+              src={portraitImg} 
               alt="Shambhavi Patil Portrait" 
               className="w-full h-full object-cover"
             />
