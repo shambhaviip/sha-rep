@@ -1,7 +1,7 @@
 import { db } from "./db";
 import {
-  experiences, projects, skills, education, articles, contactMessages,
-  type Experience, type Project, type Skill, type Education, type Article, type InsertContactMessage
+  experiences, projects, skills, education, articles, contactMessages, achievements,
+  type Experience, type Project, type Skill, type Education, type Article, type InsertContactMessage, type Achievement
 } from "@shared/schema";
 
 export interface IStorage {
@@ -11,6 +11,7 @@ export interface IStorage {
   getSkills(): Promise<Skill[]>;
   getEducation(): Promise<Education[]>;
   getArticles(): Promise<Article[]>;
+  getAchievements(): Promise<Achievement[]>;
   
   // Contact
   createContactMessage(message: InsertContactMessage): Promise<void>;
@@ -40,6 +41,10 @@ export class DatabaseStorage implements IStorage {
     return await db.select().from(articles);
   }
 
+  async getAchievements(): Promise<Achievement[]> {
+    return await db.select().from(achievements).orderBy(achievements.order);
+  }
+
   async createContactMessage(message: InsertContactMessage): Promise<void> {
     await db.insert(contactMessages).values(message);
   }
@@ -52,104 +57,98 @@ export class DatabaseStorage implements IStorage {
     // Seed Experiences
     await db.insert(experiences).values([
       {
-        company: "Tech Innovators Inc.",
-        title: "Senior Product Manager",
-        location: "San Francisco, CA",
-        period: "2021 - Present",
-        description: "Led cross-functional teams to launch AI-driven analytics platform.\nIncreased user retention by 25% through data-informed UX improvements.\nManaged stakeholder relationships across engineering, design, and sales.",
-        category: "Product",
+        company: "Design Horizons",
+        title: "UX Strategist & Product Designer",
+        location: "Mumbai, India",
+        period: "2022 - Present",
+        description: "Spearheading user-centric design initiatives for global startups.\nBridging the gap between business strategy and user needs through data-informed research.\nCreating high-fidelity prototypes and design systems for enterprise applications.",
+        category: "UX",
         order: 1
       },
       {
-        company: "Strategic Solutions Group",
-        title: "Strategy Consultant",
-        location: "New York, NY",
-        period: "2018 - 2021",
-        description: "Conducted market analysis for Fortune 500 clients entering new verticals.\nDeveloped 5-year digital transformation roadmaps.\nFacilitated workshops to align executive leadership on product vision.",
-        category: "Strategy",
+        company: "Innovation Lab",
+        title: "Junior Product Designer",
+        location: "Pune, India",
+        period: "2020 - 2022",
+        description: "Collaborated with product teams to refine user journeys for mobile platforms.\nConducted usability testing and synthesized user feedback into actionable insights.\nDeveloped wireframes and interactive mockups for e-commerce solutions.",
+        category: "UX",
         order: 2
+      }
+    ]);
+
+    // Seed Achievements
+    await db.insert(achievements).values([
+      {
+        title: "UX Excellence Award",
+        organization: "Design India Forum",
+        description: "Recognized for innovative user interface design in fintech apps.",
+        date: "2023",
+        order: 1
       },
       {
-        company: "Creative Studio",
-        title: "UX Designer",
-        location: "Austin, TX",
-        period: "2016 - 2018",
-        description: "Designed end-to-end user flows for mobile banking application.\nConducted usability testing with 50+ participants.\nCreated high-fidelity prototypes and design systems.",
-        category: "UX",
-        order: 3
+        title: "Product Innovation Challenge Winner",
+        organization: "Startup Hub",
+        description: "Led the winning team in a 48-hour design sprint for social impact products.",
+        date: "2021",
+        order: 2
       }
     ]);
 
     // Seed Projects
     await db.insert(projects).values([
       {
-        title: "E-commerce Optimization",
-        role: "Product & UX",
-        client: "RetailCo",
+        title: "HealthConnect App",
+        role: "Lead Designer",
+        client: "Wellness Corp",
         category: "Case Study",
-        problem: "Checkout conversion rate dropped by 15% after redesign.",
-        solution: "Implemented simplified one-page checkout and guest payment options.",
-        outcome: "Recovered conversion rate and improved it by additional 8%.",
-        tags: ["UX Research", "A/B Testing", "Product Strategy"],
+        problem: "Users struggled to navigate complex health data on mobile.",
+        solution: "Redesigned the information architecture and introduced a visual dashboard.",
+        outcome: "Engagement increased by 40% within the first three months of launch.",
+        tags: ["Mobile Design", "HealthTech", "UI/UX"],
         order: 1
       },
       {
-        title: "Market Entry Strategy",
-        role: "Strategist",
-        client: "FinTech Startup",
+        title: "EcoShop Strategy",
+        role: "UX Strategist",
+        client: "GreenRetail",
         category: "Strategy Work",
-        problem: "Client needed to identify the most viable European market for expansion.",
-        solution: "Competitive analysis and regulatory landscape review of 5 key markets.",
-        outcome: "Successfully launched in Germany with 10k users in first month.",
-        tags: ["Market Analysis", "Go-to-Market", "Financial Modeling"],
+        problem: "High drop-off rate during the checkout process.",
+        solution: "Simplified checkout flow and added progress indicators.",
+        outcome: "Checkout completion rate improved from 65% to 82%.",
+        tags: ["E-commerce", "Strategy", "User Flow"],
         order: 2
       }
     ]);
 
     // Seed Skills
     await db.insert(skills).values([
-      { category: "Product", name: "Roadmapping" },
-      { category: "Product", name: "Prioritization" },
-      { category: "Product", name: "Stakeholder Management" },
-      { category: "Strategy", name: "Market Analysis" },
-      { category: "Strategy", name: "Financial Modeling" },
       { category: "UX", name: "User Research" },
       { category: "UX", name: "Wireframing" },
-      { category: "Tools", name: "Figma" },
-      { category: "Tools", name: "Jira" },
-      { category: "Tools", name: "Miro" }
+      { category: "UX", name: "Prototyping" },
+      { category: "Technical", name: "Figma" },
+      { category: "Technical", name: "Adobe XD" },
+      { category: "Technical", name: "HTML/CSS" },
+      { category: "Soft Skills", name: "Storytelling" },
+      { category: "Soft Skills", name: "Stakeholder Management" }
     ]);
 
     // Seed Education
     await db.insert(education).values([
       {
-        institution: "University of Technology",
-        degree: "Master of Business Administration (MBA)",
-        year: "2018",
-        location: "Boston, MA"
-      },
-      {
-        institution: "Design Academy",
-        degree: "BFA in Interaction Design",
-        year: "2014",
-        location: "Savannah, GA"
+        institution: "National Institute of Design",
+        degree: "Bachelor of Design (B.Des)",
+        year: "2020",
+        location: "Ahmedabad, India"
       }
     ]);
 
     // Seed Articles
     await db.insert(articles).values([
       {
-        title: "Bridging the Gap Between Product and Design",
-        summary: "How cross-functional collaboration drives better outcomes.",
-        publishedAt: "Jan 2024",
-        platform: "Medium",
-        link: "#"
-      },
-      {
-        title: "The Future of AI in UX Research",
-        summary: "Leveraging LLMs to synthesize user feedback at scale.",
-        publishedAt: "Nov 2023",
-        platform: "Substack",
+        title: "The Power of Empathy in Design",
+        summary: "Why understanding user psychology is key to great products.",
+        publishedAt: "Mar 2024",
+        platform: "LinkedIn",
         link: "#"
       }
     ]);

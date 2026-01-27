@@ -68,6 +68,16 @@ export const articles = pgTable("articles", {
   platform: text("platform"), // e.g. "Medium", "Substack"
 });
 
+// Leadership & Achievements
+export const achievements = pgTable("achievements", {
+  id: serial("id").primaryKey(),
+  title: text("title").notNull(),
+  organization: text("organization"),
+  description: text("description").notNull(),
+  date: text("date"), // e.g. "2023"
+  order: integer("order").notNull().default(0),
+});
+
 // === SCHEMAS ===
 
 export const insertContactMessageSchema = createInsertSchema(contactMessages).omit({ id: true, createdAt: true });
@@ -76,6 +86,7 @@ export const insertProjectSchema = createInsertSchema(projects).omit({ id: true 
 export const insertSkillSchema = createInsertSchema(skills).omit({ id: true });
 export const insertEducationSchema = createInsertSchema(education).omit({ id: true });
 export const insertArticleSchema = createInsertSchema(articles).omit({ id: true });
+export const insertAchievementSchema = createInsertSchema(achievements).omit({ id: true });
 
 // === EXPLICIT API TYPES ===
 
@@ -87,3 +98,4 @@ export type Project = typeof projects.$inferSelect;
 export type Skill = typeof skills.$inferSelect;
 export type Education = typeof education.$inferSelect;
 export type Article = typeof articles.$inferSelect;
+export type Achievement = typeof achievements.$inferSelect;

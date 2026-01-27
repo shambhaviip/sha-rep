@@ -75,6 +75,13 @@ export const api = {
         200: z.array(z.custom<typeof articles.$inferSelect>()),
       },
     },
+    achievements: {
+      method: 'GET' as const,
+      path: '/api/achievements',
+      responses: {
+        200: z.array(z.custom<typeof achievements.$inferSelect>()),
+      },
+    },
   }
 };
 
