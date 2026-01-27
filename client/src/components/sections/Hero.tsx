@@ -22,7 +22,7 @@ export function Hero() {
             </span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
-            I am a UX Strategist and Product Designer who believes in data-informed, user-centric design that balances business goals with human needs.
+            I am a Product Manager and UX Designer who believes in data-informed, user-centric design that balances business goals with human needs.
           </p>
           
           <div className="flex flex-wrap gap-4 mb-12">
