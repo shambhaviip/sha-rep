@@ -8,11 +8,15 @@ export function Skills() {
   const { data: skills, isLoading } = useSkills();
 
   // Group skills by category
-  const categories = ["Product", "Strategy", "UX", "Tools"];
-  const skillsByCategory = categories.reduce((acc, category) => {
-    acc[category] = skills?.filter(s => s.category === category) || [];
+  const skillsByCategory = skills?.reduce((acc, skill) => {
+    if (!acc[skill.category]) {
+      acc[skill.category] = [];
+    }
+    acc[skill.category].push(skill);
     return acc;
-  }, {} as Record<string, typeof skills>);
+  }, {} as Record<string, typeof skills>) || {};
+
+  const categories = Object.keys(skillsByCategory).sort();
 
   return (
     <section id="skills" className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
