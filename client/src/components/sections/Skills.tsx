@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import { useSkills } from "@/hooks/use-content";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Badge } from "@/components/ui/badge";
 
 export function Skills() {
   const { data: skills, isLoading } = useSkills();
@@ -32,16 +33,18 @@ export function Skills() {
               I bring a comprehensive toolkit to solve complex problems.
             </p>
             
-            <div className="grid grid-cols-2 gap-8 mt-12">
-              <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                <span className="text-4xl font-bold text-accent block mb-2">6+</span>
-                <span className="text-sm text-primary-foreground/70 uppercase tracking-widest font-mono">Years Experience</span>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm"
+            >
+              <CheckCircle2 className="w-6 h-6 text-accent" />
+              <div>
+                <span className="text-sm font-bold text-accent block">Certified Scrum Product Owner (CSPO)</span>
+                <span className="text-xs text-primary-foreground/60 uppercase tracking-widest font-mono">Certified by Scrum Alliance</span>
               </div>
-              <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                <span className="text-4xl font-bold text-accent block mb-2">20+</span>
-                <span className="text-sm text-primary-foreground/70 uppercase tracking-widest font-mono">Products Launched</span>
-              </div>
-            </div>
+            </motion.div>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 gap-x-8 gap-y-12">
@@ -59,23 +62,15 @@ export function Skills() {
                   <h3 className="text-xl font-bold mb-4 text-accent border-b border-white/10 pb-2 inline-block">
                     {category}
                   </h3>
-                  <div className="space-y-4">
+                  <div className="flex flex-wrap gap-2">
                     {skillsByCategory[category]?.map((skill) => (
-                      <div key={skill.id} className="space-y-1.5">
-                        <div className="flex justify-between text-sm">
-                          <span className="font-medium">{skill.name}</span>
-                          <span className="text-primary-foreground/60">85%</span>
-                        </div>
-                        <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
-                          <motion.div 
-                            className="h-full bg-accent"
-                            initial={{ width: 0 }}
-                            whileInView={{ width: "85%" }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1, delay: 0.5 }}
-                          />
-                        </div>
-                      </div>
+                      <Badge 
+                        key={skill.id} 
+                        variant="outline" 
+                        className="bg-white/5 border-white/10 text-primary-foreground hover:bg-white/10 transition-colors"
+                      >
+                        {skill.name}
+                      </Badge>
                     ))}
                   </div>
                 </motion.div>
