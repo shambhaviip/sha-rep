@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Download, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import portraitImg from "@/assets/graduation-portrait.png";
+import portraitImg from "@/assets/avatar-graduation.png";
 
 export function Hero() {
   return (
@@ -53,7 +53,7 @@ export function Hero() {
             <img 
               src={portraitImg} 
               alt="Shambhavi Patil Portrait" 
-              className="w-full h-full object-cover object-[center_20%]"
+              className="w-full h-full object-contain p-4"
             />
           </div>
           {/* Decorative Elements */}
