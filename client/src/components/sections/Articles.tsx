@@ -17,9 +17,9 @@ export function Articles() {
           viewport={{ once: true }}
           className="mb-12 text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Thoughts & Writing</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Research Publications</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Exploring the future of design, technology, and product management.
+            A selection of peer-reviewed research and scholarly publications.
           </p>
         </motion.div>
 
