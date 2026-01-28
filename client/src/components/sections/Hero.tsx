@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Download, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import portraitImg from "@assets/Formal_Picture_1769532406864.jpg";
+import portraitImg from "@/assets/graduation-portrait.png";
 
 export function Hero() {
   return (
@@ -49,11 +49,11 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="relative hidden md:block"
         >
-          <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative z-10">
+          <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative z-10 bg-muted">
             <img 
               src={portraitImg} 
               alt="Shambhavi Patil Portrait" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-[center_20%]"
             />
           </div>
           {/* Decorative Elements */}
