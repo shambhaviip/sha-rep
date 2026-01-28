@@ -16,7 +16,9 @@ export function Skills() {
     return acc;
   }, {} as Record<string, typeof skills>) || {};
 
-  const categories = Object.keys(skillsByCategory).sort();
+  // Define structured rows for layout
+  const row1 = ["Product", "UX", "Strategy"];
+  const row2 = ["Data & Analytics", "Tools"];
 
   return (
     <section id="skills" className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
@@ -52,36 +54,77 @@ export function Skills() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="space-y-6">
           {isLoading ? (
-            <SkillsSkeleton />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <SkillsSkeleton />
+            </div>
           ) : (
-            categories.map((category, index) => (
-              <motion.div
-                key={category}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/[0.08] transition-all duration-300 flex flex-col h-full"
-              >
-                <h3 className="text-lg font-bold mb-6 text-accent flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-accent" />
-                  {category}
-                </h3>
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  {skillsByCategory[category]?.map((skill) => (
-                    <Badge 
-                      key={skill.id} 
-                      variant="outline" 
-                      className="bg-white/5 border-white/10 text-primary-foreground/90 hover:border-accent hover:text-accent transition-all duration-300 py-1.5 px-3 rounded-lg text-sm font-medium"
+            <>
+              {/* Row 1: Product, UX, Strategy */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {row1.map((category, index) => (
+                  skillsByCategory[category] && (
+                    <motion.div
+                      key={category}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/[0.08] transition-all duration-300 flex flex-col h-full"
                     >
-                      {skill.name}
-                    </Badge>
-                  ))}
-                </div>
-              </motion.div>
-            ))
+                      <h3 className="text-lg font-bold mb-6 text-accent flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+                        {category}
+                      </h3>
+                      <div className="flex flex-wrap gap-2 mt-auto">
+                        {skillsByCategory[category]?.map((skill) => (
+                          <Badge 
+                            key={skill.id} 
+                            variant="outline" 
+                            className="bg-white/5 border-white/10 text-primary-foreground/90 hover:border-accent hover:text-accent transition-all duration-300 py-1.5 px-3 rounded-lg text-sm font-medium"
+                          >
+                            {skill.name}
+                          </Badge>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )
+                ))}
+              </div>
+
+              {/* Row 2: Data & Tools */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto w-full">
+                {row2.map((category, index) => (
+                  skillsByCategory[category] && (
+                    <motion.div
+                      key={category}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.3 + index * 0.1 }}
+                      className="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/[0.08] transition-all duration-300 flex flex-col h-full"
+                    >
+                      <h3 className="text-lg font-bold mb-6 text-accent flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+                        {category}
+                      </h3>
+                      <div className="flex flex-wrap gap-2 mt-auto">
+                        {skillsByCategory[category]?.map((skill) => (
+                          <Badge 
+                            key={skill.id} 
+                            variant="outline" 
+                            className="bg-white/5 border-white/10 text-primary-foreground/90 hover:border-accent hover:text-accent transition-all duration-300 py-1.5 px-3 rounded-lg text-sm font-medium"
+                          >
+                            {skill.name}
+                          </Badge>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )
+                ))}
+              </div>
+            </>
           )}
         </div>
       </div>
