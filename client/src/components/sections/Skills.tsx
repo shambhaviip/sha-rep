@@ -33,7 +33,7 @@ export function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Capabilities & Toolkit</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">Skills & Toolkit</h2>
             <p className="text-primary-foreground/70 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
               My expertise lies at the intersection of business strategy and user-centered design. 
               I bring a comprehensive toolkit to solve complex problems.
