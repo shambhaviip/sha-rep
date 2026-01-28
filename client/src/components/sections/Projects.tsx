@@ -43,25 +43,6 @@ export function Projects() {
                 transition={{ delay: index * 0.1 }}
               >
                 <Card className="h-full flex flex-col overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                  <div className="aspect-video bg-muted relative overflow-hidden">
-                    {project.imageUrl ? (
-                      <img 
-                        src={project.imageUrl} 
-                        alt={project.title} 
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-secondary/50">
-                        <FolderOpen className="w-12 h-12 text-muted-foreground/30" />
-                      </div>
-                    )}
-                    <div className="absolute top-4 left-4">
-                      <Badge className="bg-background/90 text-foreground hover:bg-background/100 backdrop-blur-sm shadow-sm">
-                        {project.category}
-                      </Badge>
-                    </div>
-                  </div>
-
                   <CardHeader className="pb-2">
                     <div className="flex justify-between items-start">
                       <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
@@ -78,9 +59,14 @@ export function Projects() {
                         </a>
                       )}
                     </div>
-                    <p className="text-sm font-medium text-muted-foreground">
-                      {project.role} {project.client && `• ${project.client}`}
-                    </p>
+                    <div className="flex items-center gap-2 mt-1">
+                      <p className="text-sm font-medium text-muted-foreground">
+                        {project.role} {project.client && `• ${project.client}`}
+                      </p>
+                      <Badge variant="outline" className="text-[10px] h-4 py-0">
+                        {project.category}
+                      </Badge>
+                    </div>
                   </CardHeader>
 
                   <CardContent className="flex-1 pb-6">
@@ -115,7 +101,6 @@ function ProjectsSkeleton() {
     <>
       {[1, 2, 3].map((i) => (
         <Card key={i} className="h-full">
-          <Skeleton className="aspect-video w-full rounded-t-xl" />
           <CardHeader>
             <Skeleton className="h-6 w-3/4 mb-2" />
             <Skeleton className="h-4 w-1/2" />
