@@ -63,15 +63,27 @@ export function Projects() {
                   </div>
 
                   <CardHeader className="pb-2">
-                    <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h3>
+                    <div className="flex justify-between items-start">
+                      <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
+                        {project.title}
+                      </h3>
+                      {project.link && (
+                        <a 
+                          href={project.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-primary transition-colors"
+                        >
+                          <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                        </a>
+                      )}
+                    </div>
                     <p className="text-sm font-medium text-muted-foreground">
                       {project.role} {project.client && `• ${project.client}`}
                     </p>
                   </CardHeader>
 
-                  <CardContent className="flex-1">
+                  <CardContent className="flex-1 pb-6">
                     <p className="text-muted-foreground text-sm line-clamp-3 mb-4">
                       {project.problem}
                     </p>
@@ -88,15 +100,6 @@ export function Projects() {
                       )}
                     </div>
                   </CardContent>
-
-                  <CardFooter className="pt-0">
-                    <Button variant="ghost" className="w-full group/btn" asChild>
-                      <a href={project.link || "#"} target="_blank" rel="noopener noreferrer">
-                        Read Case Study 
-                        <ArrowUpRight className="w-4 h-4 ml-2 transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
-                      </a>
-                    </Button>
-                  </CardFooter>
                 </Card>
               </motion.div>
             ))
