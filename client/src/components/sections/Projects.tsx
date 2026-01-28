@@ -22,7 +22,7 @@ export function Projects() {
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Projects</h2>
             <p className="text-muted-foreground max-w-xl">
-              A collection of case studies and strategic initiatives that drove measurable impact.
+              A collection of academic and personal projects in Product, UI/UX, and Data.
             </p>
           </div>
           <Button variant="outline" className="gap-2">
