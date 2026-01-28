@@ -52,14 +52,12 @@ export function Contact() {
             <div className="space-y-6">
               <div className="flex flex-col gap-1">
                 <span className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">Email</span>
-                <a href="mailto:hello@alex.design" className="text-2xl font-medium hover:text-primary transition-colors">hello@alex.design</a>
+                <a href="mailto:shambhaviipatil@gmail.com" className="text-2xl font-medium hover:text-primary transition-colors">shambhaviipatil@gmail.com</a>
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">Socials</span>
                 <div className="flex gap-4">
-                  <a href="#" className="hover:text-primary transition-colors hover:underline">LinkedIn</a>
-                  <a href="#" className="hover:text-primary transition-colors hover:underline">Twitter / X</a>
-                  <a href="#" className="hover:text-primary transition-colors hover:underline">Medium</a>
+                  <a href="https://www.linkedin.com/in/shambhavipatil/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors hover:underline">LinkedIn</a>
                 </div>
               </div>
             </div>
