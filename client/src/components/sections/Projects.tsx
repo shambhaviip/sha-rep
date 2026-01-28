@@ -63,16 +63,10 @@ export function Projects() {
                       <p className="text-sm font-medium text-muted-foreground">
                         {project.role} {project.client && `• ${project.client}`}
                       </p>
-                      <Badge variant="outline" className="text-[10px] h-4 py-0">
-                        {project.category}
-                      </Badge>
                     </div>
                   </CardHeader>
 
                   <CardContent className="flex-1 pb-6">
-                    <p className="text-muted-foreground text-sm line-clamp-3 mb-4">
-                      {project.problem}
-                    </p>
                     <div className="flex flex-wrap gap-2">
                       {project.tags?.slice(0, 3).map((tag, i) => (
                         <span key={i} className="text-xs px-2 py-1 rounded bg-secondary text-secondary-foreground font-mono">
@@ -106,7 +100,10 @@ function ProjectsSkeleton() {
             <Skeleton className="h-4 w-1/2" />
           </CardHeader>
           <CardContent>
-            <Skeleton className="h-20 w-full" />
+            <div className="flex gap-2">
+              <Skeleton className="h-6 w-16" />
+              <Skeleton className="h-6 w-16" />
+            </div>
           </CardContent>
         </Card>
       ))}

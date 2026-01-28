@@ -31,8 +31,6 @@ export const projects = pgTable("projects", {
   title: text("title").notNull(),
   role: text("role").notNull(),
   client: text("client"),
-  category: text("category").notNull(), // 'Case Study', 'Strategy Work'
-  problem: text("problem"),
   solution: text("solution"),
   outcome: text("outcome"),
   imageUrl: text("image_url"),
