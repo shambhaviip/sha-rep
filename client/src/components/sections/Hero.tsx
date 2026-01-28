@@ -28,7 +28,7 @@ export function Hero() {
           
           <div className="flex flex-wrap gap-4 mb-12">
             <Button size="lg" className="rounded-full px-8 hover-elevate active-elevate-2" asChild>
-              <a href="#projects">Portfolio</a>
+              <a href="#projects">Projects</a>
             </Button>
             <Button size="lg" variant="outline" className="rounded-full px-8 hover-elevate active-elevate-2 gap-2" asChild>
               <a href="/resume.pdf" download="Shambhavi_Patil_Resume.pdf">
