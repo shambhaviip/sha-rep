@@ -68,8 +68,10 @@ export function Navbar() {
               {item.name}
             </a>
           ))}
-          <Button variant="outline" size="sm" className="gap-2 rounded-full border-primary/20 hover:border-primary/50">
-            <Download className="w-4 h-4" /> Resume
+          <Button variant="outline" size="sm" className="gap-2 rounded-full border-primary/20 hover:border-primary/50" asChild>
+            <a href="/resume.pdf" download="Shambhavi_Patil_Resume.pdf">
+              <Download className="w-4 h-4" /> Resume
+            </a>
           </Button>
           <ThemeToggle />
         </nav>
@@ -94,8 +96,10 @@ export function Navbar() {
                     {item.name}
                   </a>
                 ))}
-                <Button className="w-full gap-2">
-                  <Download className="w-4 h-4" /> Download Resume
+                <Button className="w-full gap-2" asChild>
+                  <a href="/resume.pdf" download="Shambhavi_Patil_Resume.pdf">
+                    <Download className="w-4 h-4" /> Download Resume
+                  </a>
                 </Button>
               </div>
             </SheetContent>

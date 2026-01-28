@@ -2,8 +2,13 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2, Send } from "lucide-react";
-import { api, type InsertContactMessage } from "@shared/routes";
+import { api } from "@shared/routes";
+import { type Project as ProjectType } from "@shared/schema"; // Using Project as a proxy for schema types if needed
 import { useSubmitContact } from "@/hooks/use-content";
+import { insertContactMessageSchema, type ContactMessage } from "@shared/schema";
+import { z } from "zod";
+
+type InsertContactMessage = z.infer<typeof insertContactMessageSchema>;
 
 import {
   Form,

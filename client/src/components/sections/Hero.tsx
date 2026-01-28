@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Download, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import portraitImg from "@assets/Formal_Picture_1769532406864.jpg";
 
@@ -27,18 +27,19 @@ export function Hero() {
           </p>
           
           <div className="flex flex-wrap gap-4 mb-12">
-            <Button size="lg" className="rounded-full px-8" asChild>
+            <Button size="lg" className="rounded-full px-8 hover-elevate active-elevate-2" asChild>
               <a href="#projects">Portfolio</a>
             </Button>
-            <Button size="lg" variant="outline" className="rounded-full px-8" asChild>
-              <a href="/resume.pdf" download>Download Resume</a>
+            <Button size="lg" variant="outline" className="rounded-full px-8 hover-elevate active-elevate-2 gap-2" asChild>
+              <a href="/resume.pdf" download="Shambhavi_Patil_Resume.pdf">
+                <Download className="w-4 h-4" /> Download Resume
+              </a>
             </Button>
           </div>
 
           <div className="flex gap-6 text-muted-foreground">
-            <a href="#" className="hover:text-primary transition-colors"><Linkedin className="w-6 h-6" /></a>
-            <a href="#" className="hover:text-primary transition-colors"><Github className="w-6 h-6" /></a>
-            <a href="mailto:hello@example.com" className="hover:text-primary transition-colors"><Mail className="w-6 h-6" /></a>
+            <a href="https://www.linkedin.com/in/shambhavipatil/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors"><Linkedin className="w-6 h-6" /></a>
+            <a href="mailto:shambhaviipatil@gmail.com" className="hover:text-primary transition-colors"><Mail className="w-6 h-6" /></a>
           </div>
         </motion.div>
 
