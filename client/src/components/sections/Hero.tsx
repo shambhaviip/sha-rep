@@ -53,7 +53,7 @@ export function Hero() {
             <img 
               src={portraitImg} 
               alt="Shambhavi Patil Portrait" 
-              className="w-full h-full object-contain p-4"
+              className="w-full h-full object-cover"
             />
           </div>
           {/* Decorative Elements */}
