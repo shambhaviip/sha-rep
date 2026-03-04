@@ -51,7 +51,7 @@ export function Contact() {
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Let's work together</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.
+              I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.
             </p>
             
             <div className="space-y-6">
